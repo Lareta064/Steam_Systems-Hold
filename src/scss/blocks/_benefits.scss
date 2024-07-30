@@ -1,5 +1,6 @@
 .border-cards{
 	display: grid;
+	margin-top: 20px;
 	grid-template-columns: repeat(4, 1fr);
 	@media (max-width: 1199px) {
 		grid-template-columns: repeat(2, 1fr);
@@ -10,6 +11,9 @@
 	&.h-auto .border-card{
 		height: auto;
 		min-height: 288px;
+		@media (max-width: 767px) {
+		min-height: 240px;
+		}
 	}
 }
 .border-card{
@@ -19,6 +23,14 @@
 	min-height: 435px;
 	&>*+*{margin-top: 15px;}
 	&__text>*+*{margin-top: 15px;}
+	&__text .h2{ 
+		@media (max-width: 1364px) {
+			font-size: 25px;
+		}
+		@media (max-width: 1199px) {
+			font-size: 18px;
+		}
+	}
 	p:not(.title){
 		color: var(--paragraph-color);
 	}
