@@ -16,7 +16,6 @@
 }
 .header-menu-wrapper{
 	@media (max-width: 1279px) {
-	
 		position: fixed;
 		top: 0;
 		bottom: 0;right: 0;
@@ -26,6 +25,7 @@
 		justify-content: flex-end;
 		transition: .3s; 
 		transform: translateX(110%);
+		z-index: 4;
 		.header-menu{
 			width: 100%;
 			max-width: 380px;
@@ -42,6 +42,7 @@
 	}
 	&.active{
 		transform: translateX(0);
+		
 	}
 }
 /*========GAMBURGER======*/
