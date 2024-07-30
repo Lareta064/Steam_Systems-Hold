@@ -1,0 +1,30 @@
+.calculation-content{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 110px;
+	.calculation-img{
+		width: 400px;
+		height: 370px;
+		flex-shrink: 0;
+		@media (max-width: 1023px) {
+			width: 370px;
+		}
+		@media (max-width: 767px) {
+			width: 225px;
+			height: 248px;
+			margin: 0 auto;
+		}
+	}
+	.calculation-text{
+		.btn{margin-top: 50px;}
+		.h2{margin-bottom: 10px;}
+	}
+	@media (max-width: 1023px) {
+		column-gap: 70px;
+	}
+	@media (max-width: 767px) {
+		 flex-direction: column;
+		 row-gap:40px;
+	}
+}

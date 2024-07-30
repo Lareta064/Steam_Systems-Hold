@@ -1,0 +1,31 @@
+.diagnostic-card{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: #fff;
+	min-height: 336px;
+	&__text{
+		box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		&>*+*{margin-top: 20px;}
+		.btn{margin-top: 50px;}
+		padding: 35px;
+		li{
+			flex-wrap: wrap;
+		}
+	}
+	&__img{
+		height: 336px;
+	}
+	@media (max-width: 1023px) {
+		display: flex;
+		flex-direction: column-reverse;
+		&__text{padding: 35px;}
+	}
+	@media (max-width: 767px) {
+	&__text {
+			padding-inline: 10px;
+		}
+	}
+}
