@@ -98,6 +98,25 @@ ul.special-list{
 		}
 	}
 }
+.icon-list{
+	li{
+		display: flex;
+		align-items: center;
+		column-gap:10px;
+		&:before{display: none;}
+		span{
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			background-color: var(--prime);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-shrink: 0;
+		}
+	}
+	li+li{margin-top: 15px;}
+}
 .prime-bg li:before {
 	background-color: #fff;
 }

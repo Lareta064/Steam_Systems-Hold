@@ -39,11 +39,11 @@ gulp.task("pug", function(callback) {
     callback();
 });
 // Таск для компиляции SCSS в CSS
-gulp.task('ttf2woff2', async function () {
-    gulp.src(['./src/fonts/*.ttf'])
-        .pipe(ttf2woff2())
-        .pipe(gulp.dest('build/fonts/'));
-});
+// gulp.task('ttf2woff2', async function () {
+//     gulp.src(['./src/fonts/*.ttf'])
+//         .pipe(ttf2woff2())
+//         .pipe(gulp.dest('build/fonts/'));
+// });
 // Таск для компиляции SCSS в CSS
 gulp.task("scss", function(callback) {
     return gulp
@@ -90,16 +90,19 @@ gulp.task("copy:js", function(callback) {
     return gulp.src("./src/js/**/*.*").pipe(gulp.dest("./build/js/"));
     callback();
 });
-gulp.task("copy:video", function(callback) {
-    return gulp.src("./src/video/**/*.*").pipe(gulp.dest("./build/video/"));
+gulp.task("copy:fonts", function(callback) {
+    return gulp.src("./src/fonts/**/*.*").pipe(gulp.dest("./build/fonts/"));
     callback();
 });
-
+gulp.task("copy:favicon", function(callback) {
+    return gulp.src("./src/favicon/**/*.*").pipe(gulp.dest("./build/favicon/"));
+    callback();
+});
 // Слежение за HTML и CSS и обновление браузера
 gulp.task("watch", function() {
     // Следим за картинками и скриптами и обновляем браузер
     watch(
-        ["./build/js/**/*.*", "./build/img/**/*.*" ,  "./build/libs/**/*.*", "./build/video/**/*.*" ],
+        ["./build/js/**/*.*", "./build/img/**/*.*", "./build/favicon/**/*.*" ,  "./build/libs/**/*.*", "./build/fonts/**/*.*" ],
         gulp.parallel(browserSync.reload)
        
     );
@@ -118,7 +121,8 @@ gulp.task("watch", function() {
     watch("./src/js/**/*.*", gulp.parallel("copy:js"));
    
     watch("./src/libs/**/*.*", gulp.parallel("copy:libs"));
-    watch("./src/libs/**/*.*", gulp.parallel("copy:video"));
+    watch("./src/libs/**/*.*", gulp.parallel("copy:fonts"));
+    watch("./src/favicon/**/*.*", gulp.parallel("copy:favicon"));
 
 });
 
@@ -149,7 +153,7 @@ gulp.task(
        
         gulp.parallel("clean:build"),
       
-        gulp.parallel("scss", "ttf2woff2", "pug", "copy:img", "copy:js", "copy:libs", "copy:video"),
+        gulp.parallel("scss",  "pug", "copy:img", "copy:js", "copy:libs", "copy:fonts", "copy:favicon"),
         gulp.parallel("html:prettify"),
         gulp.parallel("server", "watch"),
         
