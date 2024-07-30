@@ -2,24 +2,34 @@
 	padding-top: 70px;
 	padding-bottom: 56px;
 	min-height: 560px;
-	background-color: rgba(49, 128, 221, .5);
-	background-image: linear-gradient(92deg, rgba(255, 255, 255, 0.99) 20%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) 100%, #fff 100%), url(../img/header.webp);
+	background-image: url(../img/header.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: bottom right;
+	background-position: 0 bottom;
+	position: relative;
+	.container{position: relative; z-index: 2;
+	}
 	.h1{margin-bottom: 5px;}
 	.hero-title, .hero-desck {max-width: 500px; margin-bottom: 40px;}
 	.hero-desck	{
-		margin-bottom: 75px;
+		margin-bottom: 50px;
 		font-size: 18px;
 		line-height: 1.4;
 		color: var(--paragraph-color);
 	}
 	.btn{max-width: 425px;}
-
+    &:before{
+		content:'';
+		position: absolute;
+		inset: 0;
+		bottom: -1px;
+		background-image: linear-gradient(92deg, rgba(255, 255, 255, 0.99) 20%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) 100%, #fff 100%);
+		z-index:1;
+	}
 	@media (max-width: 1199px) {
 		min-height: 717px;
-		background-image: linear-gradient(92deg, rgba(255, 255, 255, 0.99) 20%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) 100%, #fff 100%), url(../img/header-w768.webp);
+		background-image:  url(../img/header-w768.webp);
+		background-position: bottom;
 		.h1,.h1-bold{font-size: 40px;}
 	}
 	@media (max-width: 767px) {
@@ -27,7 +37,7 @@
 		height: calc(100dvh - 100px);
 		height: calc(100vh - 150px);
 		padding-top: 35px;
-		background-image: linear-gradient(92deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, #fff 100%), url(../img/header-w375.webp);
+		background-image:url(../img/header-w375.webp);
 		.hero-desck{
 			margin-bottom: 50px;
 			font-size: 15px;
