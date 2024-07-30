@@ -8,9 +8,9 @@ html(lang="ru")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		//====favicon ======
-		link(rel="apple-touch-icon", sizes="180x180", href="./favicon/apple-touch-icon.webp")
-		link(rel="icon", type="image/webp", sizes="32x32", href="./favicon/favicon-32x32.webp")
-		link(rel="icon", type="image/webp", sizes="16x16", href="./favicon/favicon-16x16.webp")
+		link(rel="apple-touch-icon", sizes="180x180", href="./favicon/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="./favicon/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="./favicon/favicon-16x16.png")
 		link(rel="manifest", href="./favicon/site.webmanifest")
 		link(rel="mask-icon", href="./favicon/safari-pinned-tab.svg", color="#5bbad5")
 		link(rel="shortcut icon", href="./favicon/favicon.ico")
@@ -19,14 +19,6 @@ html(lang="ru")
 		meta(name="theme-color", content="#ffffff")
 		//====убрать перевод цифр в номер телефона на ios  ======
 		meta(name="format-detection" content="telephone=no")
-		
-		//======= swiper slider ======
-		link(rel="stylesheet", href="./libs/swiper/swiper.min.css")
-		
-		//-============ fancybox =============
-		//- link(rel="stylesheet", href="./libs/fancybox/fancybox.css")
-		
-		
 
 		title !{title}
 		style.
@@ -77,7 +69,35 @@ html(lang="ru")
 				justify-content: space-between;
 				width: min(1440px, 100%);
 				}
+				.menu-list {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				-webkit-column-gap: 44px;
+				-moz-column-gap: 44px;
+				column-gap: 44px;
+				}
 
+				.menu-list li:before {
+				display: none;
+				}
+
+				.menu-list li + li {
+				margin-top: 0;
+				}
+
+				.menu-list a {
+				font-weight: 700;
+				font-size: 13px;
+				line-height: 1.38;
+				letter-spacing: 0.01em;
+				text-transform: uppercase;
+				color: var(--black);
+				white-space: nowrap;
+				}
 				.header .contacts-group .btn {
 				min-width: unset;
 				}
@@ -133,7 +153,7 @@ html(lang="ru")
 				padding-top: 70px;
 				padding-bottom: 56px;
 				min-height: 560px;
-				background-image: url(../img/header.webp);
+				background-image: url(./img/header.webp);
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-position: 0 bottom;
@@ -178,7 +198,7 @@ html(lang="ru")
 				@media (max-width: 1199px) {
 				.hero {
 					min-height: 717px;
-					background-image: url(../img/header-w768.webp);
+					background-image: url(./img/header-w768.webp);
 					background-position: bottom;
 				}
 
@@ -195,10 +215,10 @@ html(lang="ru")
 
 				.hero {
 					min-height: unset;
-					height: calc(100dvh - 100px);
+					
 					height: calc(100vh - 150px);
 					padding-top: 35px;
-					background-image: url(../img/header-w375.webp);
+					background-image: url(./img/header-w375.webp);
 				}
 
 				.hero .hero-desck {
@@ -211,6 +231,8 @@ html(lang="ru")
 					font-size: 25px;
 				}
 				}
+		//======= swiper slider ======
+		link(rel="stylesheet", href="./libs/swiper/swiper.min.css")
 		//======= main styles ======
 		link(rel="stylesheet", href="./css/main.css")
 			

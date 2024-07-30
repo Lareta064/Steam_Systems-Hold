@@ -13,6 +13,9 @@
 		color: var(--black);
 		white-space: nowrap;
 	}
+	@media (max-width: 1199px) {
+		column-gap: 30px;
+	}
 }
 .header-menu-wrapper{
 	@media (max-width: 1279px) {
