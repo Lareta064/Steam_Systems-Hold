@@ -1,0 +1,20 @@
+.how-work{
+	.h1{
+		@media (max-width: 1199px) {
+		font-size: 30px;
+		}
+	}
+	
+}
+.three-columns.border-cards{
+	grid-template-columns: 1fr 1fr 1fr;
+	@media (max-width: 1199px) {
+		grid-template-columns: 1fr
+	}
+}
+.border-card{
+	.h3{
+		column-gap:10px;
+		span:first-child{flex-shrink: 0;}
+	}
+}

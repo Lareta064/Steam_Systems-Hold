@@ -1,0 +1,30 @@
+.border-cards{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	@media (max-width: 1199px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: 767px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	&.h-auto .border-card{
+		height: auto;
+		min-height: 288px;
+	}
+}
+.border-card{
+	padding: 60px 35px;
+	background: #fff;
+	border: 1px solid var(--divider-colr);
+	min-height: 435px;
+	&>*+*{margin-top: 15px;}
+	&__text>*+*{margin-top: 15px;}
+	p:not(.title){
+		color: var(--paragraph-color);
+	}
+	.btn{margin-top: 50px;}
+	@media (max-width: 767px) {
+		padding: 60px 20px;
+		min-height: 317px;
+	}
+}

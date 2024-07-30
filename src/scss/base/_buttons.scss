@@ -1,0 +1,40 @@
+$btnHeight: 50px;
+$brad: 5px;
+$padInline:22px;
+.btn, .btn[type="submit"]{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	font-family: var(--font-family);
+	cursor:pointer;
+	white-space: nowrap;
+	padding-inline: $padInline;
+	font-weight: 700;
+	font-size: 12px;
+	height: $btnHeight;
+	line-height: $btnHeight;
+	border-radius: $brad;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+	color: var(--white);
+	background-color: var(--green);
+	transition: .3s;
+	width: fit-content;
+	min-width: 170px;
+	&.btn--slim{
+		height: 34px;
+		line-height: 34px;
+		padding-inline:18px;
+	}
+	&:hover{
+		background-color: var(--btnHover);
+	}
+	&:active, &:focus{
+		background-color: darken(#499f27, 7%);
+	}
+	@media (max-width: 767px) {
+	  width: 100%;
+	  max-width: 425px;
+	}
+}
