@@ -1,0 +1,101 @@
+.modal-calculation.modal-wrapper{
+	 .modal-body{
+		width: min(1200px, 100%);
+		@media (max-width: 1199px) {
+		align-items: flex-start;
+		}
+	}
+}
+.calculation-form{
+	.tooltip-icon{
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		box-shadow: 0 0 8px rgba(0,0,0, .24);
+		text-align: center;
+		line-height: 22px;
+		
+	}
+	.form-item{
+		display: grid;
+		grid-template-columns: 8fr 4fr;
+		column-gap: 70px;
+		input{padding-right: 12px;}
+		input::placeholder{
+			font-size: 14px;
+			letter-spacing: -0.02em;
+		}
+		@media (max-width: 1199px) {
+			grid-template-columns:7fr 5fr;
+			column-gap: 30px;
+		}
+		@media (max-width: 767px) {
+			grid-template-columns:1fr;
+			&.form-result{
+				text-align: center;
+			}
+			
+		}
+	}
+		.label{
+			position: relative;
+			font-size: 18px;
+			display: flex;
+			align-items: center;
+			column-gap: 16px;
+			justify-content: space-between;
+			.tooltip{
+				position: relative;
+				
+			}
+			.tooltip-box {width: 330px;}
+			@media (max-width: 1023px) {
+				font-size: 16px;
+			}
+			@media (max-width: 767px) {
+				margin-bottom: 10px;
+				font-size: 14px;
+				.tooltip-box{width: 300px;}
+			}
+		}
+		.form-btn-calc .btn, .form-btn{
+		width: 100%;
+		max-width: 428px;
+		margin: 0 auto;
+	}
+}
+.custom-select-wrapper {
+	position: relative;
+	display: inline-block;
+	width:100%;
+}
+
+.custom-select {
+	width: 100%;
+	padding: 10px;
+	padding-right: 40px;
+	/* Отступ для иконки */
+	appearance: none;
+	background: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: inherit;
+}
+
+.custom-select-wrapper::after {
+	content: '';
+	/* Юникод символ стрелки вниз */
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	pointer-events: none;
+	width: 16px;
+	height: 31px;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='31' viewBox='0 0 16 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.29289 30.7071C7.68342 31.0976 8.31658 31.0976 8.70711 30.7071L15.0711 24.3431C15.4616 23.9526 15.4616 23.3195 15.0711 22.9289C14.6805 22.5384 14.0474 22.5384 13.6569 22.9289L8 28.5858L2.34314 22.9289C1.95262 22.5384 1.31946 22.5384 0.928931 22.9289C0.538407 23.3195 0.538407 23.9526 0.928931 24.3431L7.29289 30.7071ZM7 -4.37114e-08L7 30L9 30L9 4.37114e-08L7 -4.37114e-08Z' fill='black' /%3e%3c/svg%3e");
+	
+}
+.custom-select option[disabled][selected] {
+	display: none;
+}

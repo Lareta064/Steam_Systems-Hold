@@ -1,0 +1,74 @@
+.modal-wrapper.modal-calculation.modal-wrapper--scroll.active(data-modal="modal-calculation")
+	.modal-body
+		//===btn close popup ===
+		button(type="button" data-role="modal-close").btn-close
+			svg.svg-close
+				use(href='./img/sprite.svg#svg-close')
+		.modal-form
+			.h2.mb-48.txt-center Расчет потерь
+			form.calculation-form(action="#")
+				//===== Расход пара====
+				.form-item
+					.label
+						span Расход пара, т/ч
+						//======подсказка, всплывает о ховеру======
+						.tooltip
+							.tooltip-icon
+								span ?
+							.tooltip-box
+								p В паропроводе. Значение расхода для расчетного участка
+					.form-input
+						input(type="number" name="steamConsumption" placeholder="Допустимые значения 1-100 тонн")
+				
+				//===== Тариф на тепловую энергию ====
+				.form-item
+					.label
+						span Тариф на тепловую энергию, руб./Гкал
+						//======подсказка, всплывает о ховеру======
+						.tooltip
+							.tooltip-icon
+								span ?
+							.tooltip-box
+								p Стоимость 1 Гкал. Устанавливается ресурсоснабжающей организацией или внутриведомственным постановлением
+					.form-input
+						input(type="number" name="energyTariff"  min="1500" max="4000" placeholder="Допустимые значения 1500-4000 руб/Гкал")
+				
+				//===== Обследование конденсатоотводчиков====
+				.form-item
+					.label
+						span Обследование конденсатоотводчиков (?)
+						//======подсказка, всплывает о ховеру======
+						.tooltip
+							.tooltip-icon
+								span ?
+							.tooltip-box
+								p За последние 5 лет. Отражает достигнутый уровень технического обслуживания
+					.custom-select-wrapper
+						select.custom-select(name="diagnosticOption")
+							option(value="placeholder") Как давно проводилось?
+							option(value="never") Не проводилось
+							option(value="year+") Проводилось давно
+							option(value="year") Проводилось год назад
+							option(value="null") Конденсатоотводчиков нет
+
+				//===== Длина паропровода====
+				.form-item
+					.label
+						span Длина паропровода, м.
+						//======подсказка, всплывает о ховеру======
+						.tooltip
+							.tooltip-icon
+								span ?
+							.tooltip-box
+								p Полная протяженность. От ввода до самого удаленного оборудования
+					.form-input
+						input(type="number" min="5" max="1500" name="lineLength" placeholder="Допустимое значение 5-1500 метров")
+				.form-item.form-btn-calc
+					span
+					+btn('Рассчитать', 'button', 'w-100')
+				.form-item.form-result.h3.txt-bold.mt-40
+					p Значение величины потерь:
+					p #[span#out-result 1053] Р в час
+				.form-btn.mt-40
+					+btn('Запросить КП')
+
